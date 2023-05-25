@@ -1,15 +1,46 @@
 <script>
-import HelloApp from './components/HelloApp.vue';
+import axios from 'axios';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
+
 export default {
-  name:'App',
+  name: 'App',
+  data() {
+    return {
+      apiBaseUrl: 'http://127.0.0.1:8000/api',
+      apiUrls: {
+        posts: '/posts'
+      },
+      posts: []
+    }
+  },
   components: {
-    HelloApp
+    AppHeader,
+    AppMain,
+    AppFooter
+  },
+  methods: {
+    getPosts() {
+      axios.get(this.apiBaseUrl + this.apiUrls.posts)
+      .then((response) => {
+        this.posts = response.data.results;
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    }
+  },
+  created() {
+    this.getPosts();
   }
 }
 </script>
 
 <template>
-  <HelloApp />
+  <AppHeader />
+  <AppMain :data="posts" />
+  <AppFooter />
 </template>
 
 
