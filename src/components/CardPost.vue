@@ -3,12 +3,15 @@
         <img v-if="post.image" :src="post.image" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
+          
             <p v-if="post.content" class="card-text">{{ post.content.substring(0, this.contentLenght) + '...' }}</p>
     
 
             <router-link :to="{ name: 'post', params: { slug: post.slug } }" class="btn btn-primary">
                 Leggi articolo
             </router-link>
+
+
         </div>
     </div>
 </template>

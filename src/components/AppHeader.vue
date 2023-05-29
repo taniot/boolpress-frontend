@@ -1,3 +1,13 @@
+<script>
+import CategoryList from './CategoryList.vue';
+
+export default {
+    name: "AppHeader",
+    components: { CategoryList }
+}
+</script>
+
+
 <template>
     <header>
         <div class="container">
@@ -20,6 +30,9 @@
                                 Blog
                             </router-link>
                         </li>
+                        <li>
+                           <CategoryList />
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -27,10 +40,5 @@
     </header>
 </template>
 
-<script>
-export default {
-    name: 'AppHeader'
-}
-</script>
 
 <style></style>

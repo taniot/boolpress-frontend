@@ -5,6 +5,8 @@ import AppHome from './pages/AppHome.vue';
 import AboutPage from './pages/AboutPage.vue';
 import BlogPage from './pages/BlogPage.vue';
 import PostPage from './pages/PostPage.vue';
+import CategoryPage from './pages/CategoryPage.vue';
+import NotFoundPage from './pages/NotFoundPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -29,6 +31,16 @@ const router = createRouter({
             path: '/blog/:slug',
             name: 'post',
             component: PostPage
+        },
+        {
+            path: '/categories/:slug',
+            name: 'category',
+            component: CategoryPage
+        },
+        { 
+            path: '/:pathMatch(.*)*', 
+            name: 'not-found',
+            component: NotFoundPage 
         }
     ]
 });

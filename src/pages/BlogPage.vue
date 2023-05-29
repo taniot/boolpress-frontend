@@ -8,7 +8,9 @@ export default {
     },
     data() {
         return {
+            currentPage: 1,
             apiBaseUrl: 'http://127.0.0.1:8000/api',
+            showButton: true,
             apiUrls: {
                 posts: '/posts'
             },
@@ -17,16 +19,45 @@ export default {
     },
     methods: {
         getPosts() {
-            axios.get(this.apiBaseUrl + this.apiUrls.posts)
+
+            axios.get(this.apiBaseUrl + this.apiUrls.posts, {
+                params: {
+                    page: this.currentPage
+                }
+            })
                 .then((response) => {
                     console.log(response);
-                    this.posts = response.data.results;
+
+    
+
+                    const results = response.data.results.data ?? response.data.results;
+                    const morePosts = response.data.results.next_page_url ?? null;
+
+                    //[], [1,2,3,4,5,6] = [1,2,3,4,5,6]
+                    //[1,2,3,4,5,6], [7,8,9,10,11,12] => [1,2,3,4,5,6,7,8,9,10,11,12]
+                    this.posts = [...this.posts, ...results];
+
+                    //console.log({morePosts});
+
+                    if (!morePosts)
+                        this.showButton = false;
+
+
                 })
                 .catch((error) => {
                     console.log(error);
                 })
+        },
+        nextPage() {
+            this.currentPage += 1;
+            this.getPosts();
         }
     },
+    // computed: {
+    //     showPosts(){
+    //         return this.posts.filter((element, index) => index < this.currentPostPerPage);
+    //     }
+    // },  
     created() {
         this.getPosts();
     }
@@ -44,6 +75,8 @@ export default {
                         <CardPost :post="post" />
                     </div>
                 </div>
+                <div class="text-center my-5" v-if="showButton"><button class="btn btn-primary"
+                        @click.prevent="nextPage">Mostra altri</button></div>
             </div>
         </main>
     </section>
