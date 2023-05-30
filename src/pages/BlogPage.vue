@@ -30,11 +30,8 @@ export default {
                     const results = response.data.results.data ?? response.data.results;
                     const morePosts = response.data.results.next_page_url ?? null;
 
-                    //[], [1,2,3,4,5,6] = [1,2,3,4,5,6]
-                    //[1,2,3,4,5,6], [7,8,9,10,11,12] => [1,2,3,4,5,6,7,8,9,10,11,12]
                     this.posts = [...this.posts, ...results];
 
-                    //console.log({morePosts});
 
                     if (!morePosts)
                         this.showButton = false;
@@ -50,11 +47,6 @@ export default {
             this.getPosts();
         }
     },
-    // computed: {
-    //     showPosts(){
-    //         return this.posts.filter((element, index) => index < this.currentPostPerPage);
-    //     }
-    // },  
     created() {
         this.getPosts();
     }
