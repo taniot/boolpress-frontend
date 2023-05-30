@@ -61,7 +61,7 @@ export default {
             <h1 class="mt-5 mb-3">{{ post.title }}</h1>
             <h2>
                 <router-link :to="{ name: 'category', params: {slug: post.category.slug} }" class="nav-link">
-                    {{ post.category.name }}
+                    Category: {{ post.category.name }}
                             </router-link>
 
           

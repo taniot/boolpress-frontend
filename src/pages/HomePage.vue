@@ -1,13 +1,13 @@
 <script>
 export default {
-  name: "AboutPage"
+  name: "HomePage"
 }
 </script>
 
 
 <template>
   <div class="container my-4">
-    <h1>About Page</h1>
+    <h1>Home Page</h1>
     <div class="content my-3">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus consequuntur deleniti ipsa nostrum
         inventore
@@ -133,24 +133,24 @@ export default {
         Commodi quas reprehenderit itaque corporis sint hic non molestias sequi nisi soluta vitae impedit dicta mollitia,
         assumenda doloremque asperiores error accusantium aliquid laboriosam exercitationem eos tempora eum delectus
         facilis? Cumque.
-        Nam dolorem minus eius cumque nisi sint quia non asperiores quod eum aspernatur dolore, accusamus unde impedit
-        culpa
-        reiciendis alias id ipsam quis ex, delectus architecto corporis? Nulla, nesciunt hic?
-        Itaque vel hic sit est quis nisi eligendi excepturi veritatis, ad dolorem nam sint dicta perferendis
-        necessitatibus
-        optio autem cupiditate dolore rem quo minima maxime delectus! Aliquam nisi eius aliquid.
-        Veniam perspiciatis maiores ab expedita, cumque tenetur blanditiis modi doloribus nisi eaque vel, enim omnis
-        tempore
-        eveniet dolorem qui laudantium veritatis recusandae alias facere et eius. Quos, architecto? Iste, odit!
-        Delectus saepe laudantium enim iusto! Ab, impedit reprehenderit. Voluptatum illo nostrum accusamus asperiores
-        sequi
-        dolore doloremque beatae iste perferendis, accusantium eaque quisquam, magni ducimus, illum mollitia rem
-        consectetur? Corporis, a?
-      </p>
-    </div>
-
+      Nam dolorem minus eius cumque nisi sint quia non asperiores quod eum aspernatur dolore, accusamus unde impedit
+      culpa
+      reiciendis alias id ipsam quis ex, delectus architecto corporis? Nulla, nesciunt hic?
+      Itaque vel hic sit est quis nisi eligendi excepturi veritatis, ad dolorem nam sint dicta perferendis
+      necessitatibus
+      optio autem cupiditate dolore rem quo minima maxime delectus! Aliquam nisi eius aliquid.
+      Veniam perspiciatis maiores ab expedita, cumque tenetur blanditiis modi doloribus nisi eaque vel, enim omnis
+      tempore
+      eveniet dolorem qui laudantium veritatis recusandae alias facere et eius. Quos, architecto? Iste, odit!
+      Delectus saepe laudantium enim iusto! Ab, impedit reprehenderit. Voluptatum illo nostrum accusamus asperiores
+      sequi
+      dolore doloremque beatae iste perferendis, accusantium eaque quisquam, magni ducimus, illum mollitia rem
+      consectetur? Corporis, a?
+    </p>
   </div>
-</template>
+
+
+</div></template>
 
 
 <style scoped></style>

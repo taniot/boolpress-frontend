@@ -11,10 +11,10 @@ export default {
 <template>
     <header>
         <div class="container">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">Blog</div>
                 <nav>
-                    <ul class="list-unstyled m-0 p-0 gap-2 d-flex">
+                    <ul class="list-unstyled m-0 p-0 gap-4 d-flex align-items-center">
                         <li>
                             <router-link :to="{ name: 'home' }" class="nav-link">
                                 Home

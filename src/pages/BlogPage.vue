@@ -26,9 +26,6 @@ export default {
                 }
             })
                 .then((response) => {
-                    console.log(response);
-
-    
 
                     const results = response.data.results.data ?? response.data.results;
                     const morePosts = response.data.results.next_page_url ?? null;
@@ -66,20 +63,21 @@ export default {
 
 
 <template>
-    <section>
-        <h1 class="mt-5 mb-3">Blog</h1>
-        <main>
-            <div class="container">
-                <div class="row my-4 gy-4">
-                    <div class="col col-md-4" v-for="post in posts">
-                        <CardPost :post="post" />
-                    </div>
+    <div class="container my-4">
+        <h1>Blog</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus error nesciunt repellendus illum doloribus ullam quos architecto, asperiores consectetur a non fugit aliquam obcaecati possimus vero autem soluta quae omnis.
+        Cum, quibusdam aperiam atque voluptas nesciunt sapiente praesentium assumenda voluptatem corporis optio, dolore, veniam perspiciatis nemo. Natus delectus esse veniam, placeat ut consectetur, soluta sequi eum odio beatae aut illo.</p>
+        <template v-if="posts.length">
+            <div class="content row my-3 gy-4">
+                <div class="col col-md-4" v-for="post in posts">
+                    <CardPost :post="post" />
                 </div>
-                <div class="text-center my-5" v-if="showButton"><button class="btn btn-primary"
-                        @click.prevent="nextPage">Mostra altri</button></div>
             </div>
-        </main>
-    </section>
+            <div class="text-center my-5" v-if="showButton"><button class="btn btn-primary" @click.prevent="nextPage">Mostra
+                    altri</button></div>
+        </template>
+
+    </div>
 </template>
 
 
